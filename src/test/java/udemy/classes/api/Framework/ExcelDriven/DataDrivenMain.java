@@ -2,6 +2,7 @@ package udemy.classes.api.Framework.ExcelDriven;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DataDrivenMain {
 
@@ -9,12 +10,19 @@ public class DataDrivenMain {
 		// TODO Auto-generated method stub
 
 		DataDriven d = new DataDriven();
-		ArrayList data = d.getData("DeleteProfile");
+		ArrayList data = d.getData("RestAddBook");
 		
-		System.out.println(data.get(0));
+		HashMap<String, Object> asMap = new HashMap<>();
+		System.out.println(asMap.put("name", data.get(0)));
+		System.out.println(asMap.put("isbn", data.get(1)));
+		System.out.println(asMap.put("aisle", data.get(2)));
+		System.out.println(asMap.put("author", data.get(3)));
+		
+		/* This way also can get the values .... hash map is an another way....
+		 * System.out.println(data.get(0));
 		System.out.println(data.get(1));
 		System.out.println(data.get(2));
-		System.out.println(data.get(3));
+		System.out.println(data.get(3));*/
 	}
 }
 
